@@ -1,0 +1,23 @@
+[
+  {
+    "question_id": "Q01.01",
+    "claim": "Ejemplo ficticio: usuarios comunican problemas de integración",
+    "source_url": "https://example.org/reviews/sample",
+    "source_title": "Ejemplo de página de reseñas (no es una fuente real)",
+    "source_published_at": "unknown",
+    "retrieved_at": "2026-11-16T08:00:00+00:00",
+    "method": "agent_research",
+    "evidence_kind": "opinion",
+    "evidence_excerpt": "Texto de ejemplo, no es una cita real",
+    "research_query": "CRM integration complaints",
+    "source_access_status": "unknown",
+    "status": "candidate",
+    "geography": "unknown",
+    "language": "es",
+    "sample_frame": "unknown",
+    "sampling_method": "convenience",
+    "source_independence_group": "example.org",
+    "contradictions": [],
+    "limitations": "Registro sintético para pruebas; no usar en análisis"
+  }
+]

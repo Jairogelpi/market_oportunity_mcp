@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "marketscope": {
+      "type": "stdio",
+      "command": "C:/Users/jairo/Downloads/marketscope_research_agent_v0_2/marketscope_research_agent_v0_2/.venv/Scripts/python.exe",
+      "args": [
+        "C:/Users/jairo/Downloads/marketscope_research_agent_v0_2/marketscope_research_agent_v0_2/start_mcp.py"
+      ],
+      "env": {
+        "MARKETSCOPE_DB": "C:/Users/jairo/Downloads/marketscope_research_agent_v0_2/marketscope_research_agent_v0_2/data/marketscope.sqlite"
+      }
+    }
+  }
+}

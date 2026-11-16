@@ -1,0 +1,54 @@
+[
+  {
+    "metric_id": "G06_01_UNIVERSE",
+    "catalog_metric": "M06_01",
+    "relation": "component",
+    "question_ids": ["Q06.01"],
+    "name": "Universo de organizaciones (primer componente de M06_01)",
+    "formula": {"type": "sum"},
+    "inputs": {"table": "observations", "sources": ["oecd", "eurostat", "us_census"]},
+    "params": {"required": ["source", "dataset", "measure", "period", "geos"], "optional": ["dims"]},
+    "unit": "organizaciones",
+    "caveats": "Cuenta empresas o establecimientos del universo; no son compradores: falta multiplicar por la fracción con necesidad y la fracción elegible (M06_01).",
+    "reviewed": false
+  },
+  {
+    "metric_id": "G06_01_ADOPTION",
+    "catalog_metric": "M06_01",
+    "relation": "proxy",
+    "question_ids": ["Q06.01", "Q02.01"],
+    "name": "Proporción de organizaciones que ya usan la tecnología (aproximación a la fracción elegible de M06_01)",
+    "formula": {"type": "latest"},
+    "inputs": {"table": "observations", "sources": ["eurostat", "oecd"], "unit_prefix": ["PC", "PT"]},
+    "params": {"required": ["source", "dataset", "measure", "geo"], "optional": ["dims"]},
+    "unit": "porcentaje",
+    "caveats": "Adopción de una tecnología, no prevalencia del problema (M02_01) ni necesidad de compra; definiciones del indicador de origen.",
+    "reviewed": false
+  },
+  {
+    "metric_id": "G07_01_INTEREST_GROWTH",
+    "catalog_metric": "M07_01",
+    "relation": "proxy",
+    "question_ids": ["Q07.01"],
+    "name": "Crecimiento de la atención relativa (aproximación al crecimiento sectorial de M07_01)",
+    "formula": {"type": "growth"},
+    "inputs": {"table": "observations", "sources": ["gdelt", "hackernews", "stackexchange", "openalex", "wikimedia_pageviews"]},
+    "params": {"required": ["source", "dataset", "measure"], "optional": ["dims", "entity"]},
+    "unit": "variación relativa",
+    "caveats": "Atención o interés, no ingresos ni usuarios del sector; usar la medida normalizada (share) o páginas vistas; sensible a cambios de cobertura de la plataforma.",
+    "reviewed": false
+  },
+  {
+    "metric_id": "G04_01_ALTERNATIVES_FOUND",
+    "catalog_metric": "M04_01",
+    "relation": "component",
+    "question_ids": ["Q04.01"],
+    "name": "Alternativas distintas identificadas (sin clasificar)",
+    "formula": {"type": "count_distinct", "field": "entity"},
+    "inputs": {"table": "documents", "sources": ["internet_archive", "wikidata"], "kinds": ["pricing_page", "entity_record"]},
+    "params": {"required": [], "optional": ["sources"]},
+    "unit": "alternativas",
+    "caveats": "Cobertura no exhaustiva y sin clasificar en directa, indirecta, interna o manual. Entidad = dominio web (Wikidata usa su web oficial cuando la tiene); productos sin web en Wikidata cuentan por su QID.",
+    "reviewed": false
+  }
+]
